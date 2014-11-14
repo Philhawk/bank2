@@ -1,4 +1,29 @@
+# == Route Map
+#
+#           Prefix Verb   URI Pattern                      Controller#Action
+#     transactions GET    /transactions(.:format)          transactions#index
+#                  POST   /transactions(.:format)          transactions#create
+#  new_transaction GET    /transactions/new(.:format)      transactions#new
+# edit_transaction GET    /transactions/:id/edit(.:format) transactions#edit
+#      transaction GET    /transactions/:id(.:format)      transactions#show
+#                  PATCH  /transactions/:id(.:format)      transactions#update
+#                  PUT    /transactions/:id(.:format)      transactions#update
+#                  DELETE /transactions/:id(.:format)      transactions#destroy
+#         accounts GET    /accounts(.:format)              accounts#index
+#                  POST   /accounts(.:format)              accounts#create
+#      new_account GET    /accounts/new(.:format)          accounts#new
+#     edit_account GET    /accounts/:id/edit(.:format)     accounts#edit
+#          account GET    /accounts/:id(.:format)          accounts#show
+#                  PATCH  /accounts/:id(.:format)          accounts#update
+#                  PUT    /accounts/:id(.:format)          accounts#update
+#                  DELETE /accounts/:id(.:format)          accounts#destroy
+#
+
 Rails.application.routes.draw do
+  resources :transactions
+
+  resources :accounts
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
