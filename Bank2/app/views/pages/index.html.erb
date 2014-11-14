@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bank2</title>
+</head>
+<body>
+
+	<h1>Bank 2</h1>
+
+
+<!-- This is where we need to create script tags that include handlebars html templates which are then called by the respective javascript code 
+
+	We need to create divs for each page ("main-accounts-page", "deposit-page", "withdraw-transfer-page", "add-account-page", "account-history-page") and then divs, inputs, and buttons within those.
+
+	In javascript we then need to manipulate the divs to change their display attribute on click of an element (e.g. when user click on "deposit" button on the "main-accounts-page", this div that shows the "main-accounts-page" needs to change its display attribute to "none" while the "deposit-page" needs to change its display attribute to "block". Example that might fit: http://stackoverflow.com/questions/6242976/javascript-hide-show-element -->
+
+
+	
+<script type="template/handlebars" id="main-accounts">
+    <div id="main-accounts-page">
+        <h2>Banque</h2>
+    	<div id="accounts-display">
+    		<ul>
+ 		   		<label id="account-name">{{ name }}</label>
+    			<li id="account-balance">{{ balance }}</li>
+			</ul>	
+		</div>
+			<div id="total-balance">
+				<label>Total Balance</label>
+				<label id="total-balance-amount">{{ totalBalance }}</label>
+			</div>
+			<button id="deposit">Deposit</button>
+			<button id="withdraw-transfer">Withdraw/Transfer</button>
+			<button id="add-account">Add an account</button>
+  	</div>
+</script>
+
+  <script type="template/handlebars" id="deposit-page">
+  <h2> Banque </h2>
+    <div id="reservations">
+      {{#each reservation }}
+        <div>Reservation: <a href="#reservation/{{ id }}">{{ flight_id }}</a>
+        Passenger: {{ user_id }} -
+        Name: {{name}}</div>
+      {{/each}}
+    </div>
+  </script>
+
+</body>
+</html>
