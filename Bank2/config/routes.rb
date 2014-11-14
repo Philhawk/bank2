@@ -20,6 +20,8 @@
 #
 
 Rails.application.routes.draw do
+  root :to => 'pages#index'
+
   resources :transactions
 
   root :to 'pages#index'
